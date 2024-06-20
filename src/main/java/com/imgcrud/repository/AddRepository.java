@@ -8,6 +8,8 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface AddRepository extends JpaRepository<Add,Long> {
-    @Query("SELECT d FROM Add d WHERE LOWER(d.name) LIKE %:search% OR LOWER(d.department) LIKE %:search%")
+    @Query("SELECT DISTINCT d FROM Add d LEFT JOIN FETCH d.reviews WHERE LOWER(d.name) LIKE %:search% OR LOWER(d.department) LIKE %:search%")
     List<Add> searchByNameOrDepartment(@Param("search") String search);
+
+
 }

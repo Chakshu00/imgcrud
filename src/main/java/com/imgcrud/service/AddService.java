@@ -84,9 +84,7 @@ public AddDto updateEmployee(long id, AddDto addDto) {
 
     public List<Add> searchEmployees(String search) {
        return addRepository.searchByNameOrDepartment(search.toLowerCase());
-
-
-    }
+ }
 
 
 }

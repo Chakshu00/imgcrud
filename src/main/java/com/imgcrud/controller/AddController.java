@@ -45,7 +45,6 @@ public class AddController {
 
     //http://localhost:8080/api/v1/allEmployees
     @GetMapping("/allEmployees")
-
     public ResponseEntity<List<Add>> getAllEmployees() {
         List<Add> employees = addService.getAllEmployees();
         return new ResponseEntity<>(employees, HttpStatus.OK);
